@@ -1,13 +1,11 @@
+import {BASE_URL} from './env';
+
 type ParamsType = {
   name: string,
   description: string
 };
 
-export function getUrl(
-  path: string,
-  queryParams: ParamsType,
-  BASE_URL: string = 'https://localhost',
-) {
+export const getUrl = (path: string, queryParams: ParamsType) => {
   if (!queryParams) return `${BASE_URL}/${path}`;
 
   let queryString = '';
@@ -16,4 +14,4 @@ export function getUrl(
   }
 
   return `${BASE_URL}/${path}?${queryString.substring(1)}`;
-}
+};

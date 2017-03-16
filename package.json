@@ -2,6 +2,9 @@
   "name": "starter2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "7.6.0"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.1.8",
     "cross-env": "^3.2.3",
@@ -27,6 +30,7 @@
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
+    "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-fontawesome": "^1.5.0",
@@ -50,15 +54,17 @@
     "lint:scss": "stylelint \"src/*.scss\"",
     "postbuild": "cd build && npm install --production",
     "postcommit": "npm run _format",
-    "preinstall": "yarn global add nodemon",
     "prepush": "npm run verify",
-    "start": "npm-run-all -p watch-css start-js",
-    "start-prod": "sudo nodemon ./server.js",
+    "start": "nodemon ./server.js",
+    "start-dev": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "verify": "npm run lint && cross-env CI=true npm test",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
-    "dbuild": "docker build -t launchpad_ui .",
-    "drun": "docker run --name ui -d -p 3000:3000 launchpad_ui"
+    "cf:start": "cf dev start",
+    "cf:login": "cf login -u user -p pass -a api.local.pcfdev.io --skip-ssl-validation",
+    "cf:init": "npm-run-all cf:start cf:login",
+    "cf:up": "cf push launchpad-ui",
+    "cf:down": "cf delete launchpad-ui"
   }
 }

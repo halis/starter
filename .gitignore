@@ -7,6 +7,7 @@
 .eslintrc.json
 npm-debug.log*
 src/**/*.css
+env.js
 
 build/
 coverage/
