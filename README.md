@@ -10,13 +10,13 @@ yarn
 ## Steps to start REST server:
 1. open a terminal window
 2. cd starter-api
-3. npm start
+3. sudo -E npm start
 
 ## Steps to start web server:
 1. open a terminal window
 2. cd starter
 3. export HTTPS=true
-4. npm start
+4. sudo -E npm start
 
 Browse http://localhost:3000
 
