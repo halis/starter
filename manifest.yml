@@ -1,0 +1,8 @@
+---
+applications:
+- name: lpui
+  memory: 256M
+  instances: 1
+  host: lpui
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  path: .

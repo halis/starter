@@ -11,6 +11,7 @@ import './app.css';
 
 async function loadProjects() {
   const url = getUrl('project');
+  console.log('URL:', url);
   try {
     const res = await fetch(url);
     console.log('app.js loadProjects: res =', res);

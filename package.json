@@ -2,6 +2,9 @@
   "name": "starter2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "7.6.0"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.1.8",
     "cross-env": "^3.2.3",
@@ -52,8 +55,8 @@
     "postcommit": "npm run _format",
     "preinstall": "yarn global add nodemon",
     "prepush": "npm run verify",
-    "start": "npm-run-all -p watch-css start-js",
-    "start-prod": "sudo nodemon ./server.js",
+    "start": "node ./server.js",
+    "start-dev": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "verify": "npm run lint && cross-env CI=true npm test",

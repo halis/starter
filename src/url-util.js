@@ -5,15 +5,14 @@ type ParamsType = {
 
 export function getUrl(
   path: string,
-  queryParams: ParamsType,
-  BASE_URL: string = 'https://localhost',
+  queryParams: ParamsType
 ) {
-  if (!queryParams) return `${BASE_URL}/${path}`;
+  if (!queryParams) return `https://lpapi.local.pcfdev.io/${path}`;
 
   let queryString = '';
   for (const key of Object.keys(queryParams).sort()) {
     queryString += `&${key}=${queryParams[key]}`;
   }
 
-  return `${BASE_URL}/${path}?${queryString.substring(1)}`;
+  return `https://lpapi.local.pcfdev.io/${path}?${queryString.substring(1)}`;
 }
