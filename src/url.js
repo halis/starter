@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://lpapi.local.pcfdev.io';
+export const BASE_URL = 'https://localhost';
