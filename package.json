@@ -64,7 +64,8 @@
     "cf:start": "cf dev start",
     "cf:login": "cf login -u user -p pass -a api.local.pcfdev.io --skip-ssl-validation",
     "cf:init": "npm-run-all cf:start cf:login",
-    "cf:up": "cf push launchpad-ui",
+    "cf:push": "cf push launchpad-ui",
+    "cf:up": "npm-run-all build cf:push",
     "cf:down": "cf delete launchpad-ui"
   }
 }
